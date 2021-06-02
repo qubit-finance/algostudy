@@ -19,3 +19,12 @@ class Solution(object):
 Runtime: 52 ms, faster than 64.21% of Python online submissions for Kth Largest Element in an Array.
 Memory Usage: 14.1 MB, less than 77.25% of Python online submissions for Kth Largest Element in an Array.
 """
+
+# O(nk) time, bubble sort idea, TLE
+def findKthLargest2(self, nums, k):
+    for i in xrange(k):
+        for j in xrange(len(nums)-i-1):
+            if nums[j] > nums[j+1]:
+                # exchange elements, time consuming
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+    return nums[len(nums)-k]
