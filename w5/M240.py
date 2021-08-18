@@ -20,10 +20,15 @@ All the integers in each column are sorted in ascending order.
 
 from typing import List
 
-
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        pass
+        ans = False
+        for lst in matrix:
+            for x in lst:
+                if x == target:
+                    return True
+
+        return ans
 
 if __name__ == "__main__":
     s = Solution()
